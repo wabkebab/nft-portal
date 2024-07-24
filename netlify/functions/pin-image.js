@@ -21,7 +21,7 @@ export const handler = async (event) => {
       maxBodyLength: Infinity,
       headers: {
         Authorization: 'Bearer '+process.env.PINATA_API_KEY_SECRET,
-        'Content-Type': 'application/json'
+        'Content-Type': 'multipart/form-data'
       },
     });
 
