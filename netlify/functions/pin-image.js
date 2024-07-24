@@ -17,7 +17,7 @@ export const handler = async (event) => {
   })
 
   try {
-    const result = await axios.post('https://api.pinata.cloud/pinning/pinFileToIPFS', formData, {
+    const result = await axios.post('https://api.pinata.cloud/pinning/pinJSONToIPFS', formData, {
       maxBodyLength: Infinity,
       headers: {
         Authorization: 'Bearer '+process.env.PINATA_API_KEY_SECRET,
