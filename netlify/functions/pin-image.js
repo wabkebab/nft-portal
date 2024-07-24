@@ -20,7 +20,8 @@ export const handler = async (event) => {
     const result = await axios.post('https://api.pinata.cloud/pinning/pinFileToIPFS', formData, {
       maxBodyLength: Infinity,
       headers: {
-        'Content-Type': 'multipart/form-data',
+        Authentication: 'Bearer '+process.env.PINATA_API_KEY_SECRET,
+        'Content-Type': 'application/json',
         pinata_api_key: process.env.PINATA_API_KEY,
         pinata_secret_api_key: process.env.PINATA_API_KEY_SECRET,
       },
@@ -31,6 +32,7 @@ export const handler = async (event) => {
       body: JSON.stringify({ ipfsCid: result.data.IpfsHash }),
     };
   } catch (error) {
+    console.log("Error while uploading to Image IPFS", error);
     return {
       statusCode: 404,
       body: error.toString(),
