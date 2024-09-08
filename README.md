@@ -1,7 +1,6 @@
 # nft-portal
 
-currently published @ https://nft-portal.netlify.app
-
+currently published @ https://polkadot.nftportal.io
 ## Prerequisites to run locally
 install netlify CLI globally
 
